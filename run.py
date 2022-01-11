@@ -1,5 +1,6 @@
-from selenium import webdriver
+from TokPed import Tokopedia
 
-content = webdriver.Chrome
-
-webElement = content.get('https://stackoverflow.com/questions/23394828/how-to-get-the-value-of-an-attribute-using-xpath')
+if __name__ == '__main__':
+    tp = Tokopedia(keyword='laptop', totalPages=10)
+    data = tp.run()
+    tp.to_excel(data)
